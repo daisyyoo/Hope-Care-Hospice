@@ -1,3 +1,3 @@
-# final-project
+# Hope Care Hospice Website
 
-A full stack JavaScript solo project.
+A full stack website for Hope Care Hospice.
