@@ -25,10 +25,10 @@ export default class Footer extends React.Component {
       <footer style={styles.bgcolor} className="w-100 py-2" id="footer-container">
         <div className="container d-flex">
           <div className="d-flex align-items-left justify-content-center flex-column w-75">
-            <h4 style={styles.title}>Delights by Daisy</h4>
+            <h4 style={styles.title}>Hope Care Hospice</h4>
             <p style={styles.text} className="m-0">Contact us!</p>
-            <p style={styles.text} className="m-0">Email: daisy@delightsbydaisy.de</p>
-            <p style={styles.text} className="m-0">Instagram: delights.by.daisy</p>
+            <p style={styles.text} className="m-0">Tel: (714)724-8033</p>
+            <p style={styles.text} className="m-0">Email: HopeCareHospice2019@gmail.com</p>
           </div>
           <div className="d-flex justify-content-end w-25">
             <img style={styles.image} src='/image/logo-sm.png' />

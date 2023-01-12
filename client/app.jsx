@@ -1,5 +1,7 @@
 import React from 'react';
 import Home from './pages/home';
+import AboutUs from './pages/about-us';
+import Inquiry from './pages/inquiry';
 import Header from './components/header';
 import Footer from './components/footer';
 import { parseRoute } from './lib';
@@ -27,9 +29,12 @@ export default class App extends React.Component {
     if (route.path === '') {
       return <Home />;
     }
-    // if (route.path === 'cookies') {
-    //   return <Catalog />;
-    // }
+    if (route.path === 'newInquiry') {
+      return <Inquiry />;
+    }
+    if (route.path === 'aboutUs') {
+      return <AboutUs />;
+    }
     return <NotFound />;
   }
 
