@@ -4,7 +4,7 @@ import AboutUs from './pages/about-us';
 import Inquiry from './pages/inquiry';
 import Header from './components/header';
 import Footer from './components/footer';
-import { parseRoute } from './lib';
+import parseRoute from './lib/parse-route';
 import AppContext from './lib/app-context';
 import PageContainer from './components/page-container';
 import NotFound from './pages/not-found';
