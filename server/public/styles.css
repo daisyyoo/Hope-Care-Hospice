@@ -1,0 +1,65 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+.navbar-brand {
+  color: #422300;
+  font-family: Merriweather, serif;
+  font-weight: 600;
+}
+
+.color-nav {
+  background-color: #dc924e;
+}
+
+.navbar-brand {
+  color: #fdeedc;
+}
+
+.navbar-brand:hover {
+  color: #fdeedc;
+}
+
+.navbar-brand:visited {
+  color: #fdeedc;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler:hover {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,251,247, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.offcanvas-title {
+  color: #422300;
+  font-family: Merriweather, serif;
+  letter-spacing: 0.2rem;
+}
+
+.menu-link {
+  color: #422300;
+  border: solid 2px #fff;
+  border-radius: 5px;
+}
+
+.menu-link:hover,
+.menu-link:active {
+  border: solid 2px #94540f;
+  border-radius: 5px;
+}
+
+.menu-link:visited {
+  color: #94540f;
+}
