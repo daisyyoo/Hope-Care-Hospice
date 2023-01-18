@@ -1,18 +1,25 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 
 const styles = {
   image: {
-    backgroundImage: 'url("/image/home-pic.webp")',
-    backgroundSize: 'cover',
-    backgroundPosition: '75%',
+    backgroundImage: 'url("/images/holding-hands-pic.jpg")',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    // width: '100%',
+    height: '22.5%'
+  },
+  textItalic: {
+    color: '#422300'
+  },
+  overlay: {
+    backgroundColor: 'rgba(69, 69, 69, 0.4)',
+    top: '0',
+    left: '0',
     width: '100%',
     height: '100%'
   },
-  textbox: {
-    position: 'absolute',
-    top: '18%',
-    left: '10%'
+  textName: {
+    color: '#f4f6ff'
   },
   text: {
     color: '#422300',
@@ -23,15 +30,10 @@ const styles = {
 export default function Home(props) {
   return (
     <div className="image-container" >
-      <div style={styles.image} className="homepage-image" />
-      <div style={styles.textbox} className="w-50">
-        <h1 className="mt-3 mb-5">Welcome!</h1>
-        <h6 style={styles.text}>
-          In my venture of creating my version of the ideal cookie,
-          I have perfected the classic Chocolate Chip and expanded my
-          repertoire to my newest creation, Jasmine Tea Almond Blueberry.
-          Take a bite and enjoy a moment of delight!</h6>
-        <Button href="#cookies" className="button-all my-3">Order Now</Button>
+      <div style={styles.image} className="position-relative">
+        <div style={styles.overlay} className="position-absolute"/>
+        <h6 style={styles.textItalic}>where hope and care come together in sincerity</h6>
+        <h1 style={styles.textName} className="mt-3 mb-5">Hope Care Hospice</h1>
       </div>
     </div>
   );
