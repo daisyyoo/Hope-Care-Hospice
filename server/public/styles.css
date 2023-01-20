@@ -10,7 +10,7 @@ h1,
 }
 
 .color-nav {
-  background-color: #dc924e;
+  background-color: #10375c;
 }
 
 .navbar-brand {
@@ -66,4 +66,9 @@ h1,
 
 .image-container {
   height: 82vh;
+}
+
+.nav-button {
+  background-color: rgb(230, 207, 0);
+  color: navy;
 }

@@ -10,13 +10,21 @@ export default class Header extends React.Component {
     return (
       <Navbar collapseOnSelect className="color-nav" expand="md" sticky="top" >
         <Container fluid className="w-100 space-between">
-          <Navbar.Brand href="#" className="px-sm-5">Hope Care Hospice</Navbar.Brand>
+          <Navbar.Brand href="#" className="px-sm-5">
+            <img
+              alt=""
+              src="/images/Hospice-logo-2.png"
+              width="90"
+              height="40"
+              className="d-inline-block align-top"
+              />
+          </Navbar.Brand>
           {/* see if I can put logo here ^ */}
           <Navbar.Toggle aria-controls="offcanvasNavbar-expand" />
           <Navbar.Offcanvas id="offcanvasNavbar-expand" aria-labelledby="offcanvasNavbar-expand" placement="end">
             <Offcanvas.Header className="mx-4 border-bot" closeButton>
               <Offcanvas.Title className="pt-2" id="offcanvasNavbar-expand">
-                MENU
+                Hope Care Hospice
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className="px-4">

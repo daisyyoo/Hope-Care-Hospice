@@ -3,13 +3,13 @@ import React from 'react';
 const styles = {
   image: {
     backgroundImage: 'url("/images/holding-hands-pic.jpg")',
-    backgroundSize: 'contain',
+    backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    // width: '100%',
-    height: '22.5%'
+    width: '100%',
+    height: '100%'
   },
   textItalic: {
-    color: '#422300'
+    color: '#f4f6ff'
   },
   overlay: {
     backgroundColor: 'rgba(69, 69, 69, 0.4)',
