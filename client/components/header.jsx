@@ -9,17 +9,17 @@ export default class Header extends React.Component {
   render() {
     return (
       <Navbar collapseOnSelect className="color-nav" expand="md" sticky="top" >
-        <Container fluid className="w-100 space-between">
+        <Container fluid className="w-100 ">
           <Navbar.Brand href="#" className="px-sm-5">
             <img
-              alt=""
-              src="/images/Hospice-logo-2.png"
-              width="90"
+              alt="hope-care-hospice-logo"
+              src="/images/Hospice-logo-4.png"
+              width="120"
               height="40"
               className="d-inline-block align-top"
               />
+            {/* add Hope Care Hospice when breakpoint (expand) is met */}
           </Navbar.Brand>
-          {/* see if I can put logo here ^ */}
           <Navbar.Toggle aria-controls="offcanvasNavbar-expand" />
           <Navbar.Offcanvas id="offcanvasNavbar-expand" aria-labelledby="offcanvasNavbar-expand" placement="end">
             <Offcanvas.Header className="mx-4 border-bot" closeButton>
