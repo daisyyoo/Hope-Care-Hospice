@@ -4,10 +4,9 @@ const styles = {
   image: {
     backgroundImage: 'url("/images/holding-hands-pic.jpg")',
     backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
     backgroundPosition: '60%',
     width: '100%',
-    height: '40%'
+    height: '100%'
   },
   overlay: {
     backgroundColor: 'rgba(69, 69, 69, 0.4)',
@@ -32,15 +31,20 @@ const styles = {
     fontSize: '1.2rem',
     fontStyle: 'italic'
   },
+  header: {
+    color: '#10375c',
+    lineHeight: '2.5rem'
+  },
   text: {
-    color: '#422300',
-    lineHeight: '2rem'
+    color: '#10375c',
+    fontSize: '1.1rem',
+    lineHeight: '1.5rem'
   }
 };
 
 export default function Home(props) {
   return (
-    <div>
+    <>
       <div className="image-container" >
         <div style={styles.image} className="position-relative">
           <div style={styles.overlay} className="position-absolute"/>
@@ -49,12 +53,12 @@ export default function Home(props) {
         </div>
       </div>
       <div className="container-fluid">
-        <div className="d-flex flex-column justify-contents-center">
-          <h1>Welcome to Hope Care Hospice</h1>
-          <p />
-          <p />
+        <div className="d-flex flex-column justify-contents-center m-3">
+          <h1 style={styles.header} className="py-2">Welcome to <br/> Hope Care Hospice</h1>
+          <p style={styles.text}>Hope Care Hospice is a Hospice Care provider based in Placentia, California. A lot of families in the community have need for our services and we know how critical our role is in the management of their health.</p>
+          <p style={styles.text}>Because our clients are in such difficult situations, we can understand that it can be hard to make decisions when it comes to their hospice care arrangements. Family members are also oftentimes under the same stressful situations. That is why we provide services that benefit the patient as well as their entire household.</p>
         </div>
       </div>
-    </div>
+    </>
   );
 }

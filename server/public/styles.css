@@ -65,7 +65,7 @@ h1,
 }
 
 .image-container {
-  height: 82vh;
+  height: 32vh;
 }
 
 .nav-button {
@@ -73,6 +73,14 @@ h1,
   color: navy;
 }
 
-/* @media only screen and (min-width: 568px) {
+@media only screen and (min-width: 568px) {
+  .image-container {
+    height: 52vh;
+  }
+}
 
-} */
+@media only screen and (min-width: 768px) {
+  .image-container {
+    height: 82vh;
+  }
+}
