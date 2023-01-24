@@ -9,18 +9,21 @@ export default class Header extends React.Component {
   render() {
     return (
       <Navbar collapseOnSelect className="color-nav" expand="md" sticky="top" >
-        <Container fluid className="w-100 ">
-          <Navbar.Brand href="#" className="px-sm-5">
+        <Container fluid >
+          <Navbar.Brand href="#" className="px-2 px-md-4">
             <img
               alt="hope-care-hospice-logo"
               src="/images/Hospice-logo-4.png"
               width="120"
               height="40"
-              className="d-inline-block align-top"
+              className="justify-content-start"
               />
             {/* add Hope Care Hospice when breakpoint (expand) is met */}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar-expand" />
+          <div className="d-flex align-items-center">
+            <i className="fa-solid fa-phone" />
+            <Navbar.Toggle aria-controls="offcanvasNavbar-expand"/>
+          </div>
           <Navbar.Offcanvas id="offcanvasNavbar-expand" aria-labelledby="offcanvasNavbar-expand" placement="end">
             <Offcanvas.Header className="mx-4 border-bot" closeButton>
               <Offcanvas.Title className="pt-2" id="offcanvasNavbar-expand">

@@ -27,6 +27,8 @@ h1,
 
 .navbar-toggler {
   border: none;
+  padding: 0 12px;
+  font-size: 1.8rem;
 }
 
 .navbar-toggler:focus {
@@ -39,7 +41,7 @@ h1,
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,251,247, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(99,198,247, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .offcanvas-title {
@@ -71,6 +73,12 @@ h1,
 .nav-button {
   background-color: rgb(230, 207, 0);
   color: navy;
+}
+
+.fa-phone {
+  color: #f3c623;
+  font-size: 1.7rem;
+  padding: 0 6px;
 }
 
 @media only screen and (min-width: 568px) {
