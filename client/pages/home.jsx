@@ -18,10 +18,10 @@ const styles = {
   textItalic: {
     color: '#f4f6ff',
     top: '50%',
-    left: '10%',
     fontFamily: 'Merriweather',
-    fontSize: '0.85rem',
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    textAlign: 'center',
+    width: '100%'
   },
   textName: {
     color: '#f4f6ff',
@@ -48,13 +48,13 @@ export default function Home(props) {
       <div className="image-container" >
         <div style={styles.image} className="position-relative">
           <div style={styles.overlay} className="position-absolute"/>
-          <h6 style={styles.textItalic} className="position-absolute m-0">where hope and care come together in sincerity</h6>
+          <h6 style={styles.textItalic} className="position-absolute m-0 home-img-text">where hope and care come together in sincerity</h6>
           <h2 style={styles.textName} className="position-absolute m-0">Hope Care Hospice</h2>
         </div>
       </div>
       <div className="container-fluid">
         <div className="d-flex flex-column justify-contents-center m-3">
-          <h1 style={styles.header} className="py-2">Welcome to <br/> Hope Care Hospice</h1>
+          <h1 style={styles.header} className="py-2">Welcome to Hope Care Hospice</h1>
           <p style={styles.text}>Hope Care Hospice is a Hospice Care provider based in Placentia, California. A lot of families in the community have need for our services and we know how critical our role is in the management of their health.</p>
           <p style={styles.text}>Because our clients are in such difficult situations, we can understand that it can be hard to make decisions when it comes to their hospice care arrangements. Family members are also oftentimes under the same stressful situations. That is why we provide services that benefit the patient as well as their entire household.</p>
         </div>

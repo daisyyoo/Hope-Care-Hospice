@@ -67,7 +67,7 @@ h1,
 }
 
 .image-container {
-  height: 32vh;
+  height: 35vh;
 }
 
 .nav-button {
@@ -81,14 +81,26 @@ h1,
   padding: 0 6px;
 }
 
+.home-img-text {
+  font-size: 1rem;
+}
+
 @media only screen and (min-width: 568px) {
   .image-container {
-    height: 52vh;
+    height: 70vh;
+  }
+
+  .home-img-text {
+    font-size: 1.4rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .image-container {
     height: 82vh;
+  }
+
+  .home-img-text {
+    font-size: 2rem;
   }
 }
