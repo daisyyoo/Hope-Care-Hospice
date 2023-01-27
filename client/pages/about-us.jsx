@@ -2,15 +2,8 @@ import React from 'react';
 
 const styles = {
   text: {
-    color: '#693802',
+    color: '#10375c',
     lineHeight: '1.7rem'
-  },
-  header: {
-    color: '#422300',
-    fontFamily: 'Merriweather'
-  },
-  line: {
-    color: '#422300'
   },
   imageContainer: {
     position: 'relative'
@@ -38,7 +31,7 @@ export default class AboutUs extends React.Component {
     return (
       <div className="container-fluid mt-3 background-half-color">
         <div className="row flex-column" style={styles.titlePadding}>
-          <h1>About Us</h1>
+          <h1 className="my-2 pb-2">About Us</h1>
         </div>
         <div className="row flex-column">
           <div style={styles.textPadding}>
