@@ -1,35 +1,17 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 const styles = {
-  text: {
-    color: '#693802',
+  textTop: {
+    color: '#10375c',
     lineHeight: '1.7rem'
   },
-  header: {
-    color: '#422300',
-    fontFamily: 'Merriweather'
-  },
-  line: {
-    color: '#422300'
-  },
-  imageContainer: {
-    position: 'relative'
+  textBot: {
+    color: '#f4f6ff',
+    lineHeight: '1.7rem'
   },
   image: {
-    position: 'absolute',
-    padding: '0',
-    objectFit: 'cover',
-    height: '100%',
-    right: '0'
-  },
-  height: {
-    height: '100%'
-  },
-  textPadding: {
-    padding: '0 50px'
-  },
-  titlePadding: {
-    padding: '0 38px'
+    objectFit: 'cover'
   }
 };
 
@@ -37,23 +19,29 @@ export default class AboutUs extends React.Component {
   render() {
     return (
       <div className="container-fluid mt-3 background-half-color">
-        <div className="row flex-column" style={styles.titlePadding}>
-          <h1>About Me</h1>
-          <h4 className="mt-3" style={styles.header}>Backstory</h4>
-          <hr style={styles.line} />
+        <div className="row flex-column">
+          <h1 className="px-3 py-2">About Us</h1>
         </div>
         <div className="row flex-column">
-          <div style={styles.textPadding}>
-            <h6 style={styles.text} className="pb-2">
-              Hi! I&apos;m Daisy, and I love food. I love food so much I wanted to make a career out of it and went to The Culinary Institue of America for cooking, not baking. I don’t have a sweet tooth like most. But when I decide to indulge in something sweet, my favorite is a chocolate chip cookie.
+          <div className="p-3 py-2">
+            <h6 style={styles.textTop} >
+              Hope Care Hospice is a Hospice Care provider based in Placentia, California. A lot of families in the community have need for our services and we know how critical our role is in the management of their health.
             </h6>
           </div>
-          <div className="d-flex justify-content-end m-0 about-me-image-container" style={styles.imageContainer}>
-            <img style={styles.image} className="about-me-image" src="/image/about-me-sm.webp" alt="lots-of-cookies" />
+          <div className="d-flex justify-content-center about-us-image-container">
+            <img style={styles.image} className="col-9 img-fluid rounded" src="/images/Chinese-Senior-Unique-Man-w-Caregiver.jpg" alt="Chinese-Senior-Unique-Man-w-Caregiver" />
           </div>
-          <div style={styles.textPadding}>
-            <h6 style={styles.text} className="py-3">
-              As you can assume, I am very picky about my cookie. I never found one I loved, not too sweet, crunchy edges, chewy center, LOTS of good quality chocolate and all those beautiful cracks that add beauty and texture. So during covid, I decided to make my own version. After perfecting what I think is the perfect chocolate chip cookie, I made different flavors and variations. I hope my cookie research gives you a moment of delight.
+          <div className="d-flex justify-content-center">
+            <Button className="call-button-all m-2 mt-4" href="tel:+1-714-724-8033"><b>Call us at 714.724.8033</b></Button>
+          </div>
+          <div className="p-3 py-2">
+            <h6 style={styles.textBot} >
+              Because our clients are in such difficult situations, we can understand that it can be hard to make decisions when it comes to their hospice care arrangements. Family members are also oftentimes under the same stressful situations. That is why we provide services that benefit the patient as well as their entire household.
+            </h6>
+          </div>
+          <div className="p-3 py-2">
+            <h6 style={styles.textBot} >
+              Hope Care Hospice is not a place, but rather an approach to care while focusing on the comfort of the patient who has a life-limiting illness. While their health issues may limit their life expectancy, it does not have to limit their quality of life in their remaining days. This is what we strive to achieve for the families under our care. If you would like the same privilege for your own family, please call us at 714-724-8033.
             </h6>
           </div>
         </div>
