@@ -35,7 +35,7 @@ export default class Header extends React.Component {
                 <Nav.Link className="px-3 menu-link" href="#hospiceBasics">HOSPICE BASICS</Nav.Link>
                 <Nav.Link className="px-3 menu-link" href="#newInquiry">REFERRALS</Nav.Link>
                 <Nav.Link className="px-3 menu-link" href="#aboutUs">ABOUT US</Nav.Link>
-                <Button className=" call-button-all" href="tel:+1-714-724-8033">714.724.8033</Button>
+                <Button className="call-button-all" href="tel:+1-714-724-8033">714.724.8033</Button>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

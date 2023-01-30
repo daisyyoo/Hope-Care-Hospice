@@ -49,6 +49,7 @@ h1,
 .menu-link:active {
   border: solid 2px #10375c;
   border-radius: 5px;
+  color: #f3c623 !important;
 }
 
 .menu-link:visited {
@@ -58,7 +59,7 @@ h1,
 .call-button-all {
   background-color: #f3c623;
   color: #10375c;
-  border: solid 2px #10375c;
+  border: solid 2px #f3c623;
   border-radius: 5px;
   font-size: 1rem;
   margin: 16px;
@@ -75,12 +76,12 @@ h1,
   background-color: #63c6f7 !important;
   color: #10375c !important;
   font-weight: 600;
-  border: solid 2px #10375c !important;
+  border: solid 2px #f3c623 !important;
   border-radius: 5px;
 }
 
 .call-button-all:focus {
-  outline: solid 1px #10375c;
+  outline: solid 1px #f3c623;
 }
 
 .image-container {
@@ -97,6 +98,14 @@ h1,
   font-size: 1rem;
 }
 
+.background-half-color {
+  background: linear-gradient(#fff 35%, #127681 35%, #127681 100%);
+}
+
+.about-us-image-container {
+  height: 25vh;
+}
+
 @media only screen and (min-width: 568px) {
   .image-container {
     height: 70vh;
@@ -104,6 +113,10 @@ h1,
 
   .home-img-text {
     font-size: 1.4rem;
+  }
+
+  .about-us-image-container {
+    height: 50vh;
   }
 }
 
@@ -137,9 +150,13 @@ h1,
   .call-button-all {
     background-color: #f3c623;
     color: #10375c;
-    border: solid 2px #10375c;
+    border: solid 2px #f3c623;
     border-radius: 5px;
     font-size: 1rem;
     margin: 0;
+  }
+
+  .about-us-image-container {
+    height: 60vh;
   }
 }
