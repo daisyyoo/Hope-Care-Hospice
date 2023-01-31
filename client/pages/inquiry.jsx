@@ -40,7 +40,6 @@ export default class Inquiry extends React.Component {
 
   // handleSubmit(event) {
   //   event.preventDefault();
-  //   const { action } = this.props;
   //   const req = {
   //     method: 'POST',
   //     headers: {
@@ -48,7 +47,7 @@ export default class Inquiry extends React.Component {
   //     },
   //     body: JSON.stringify(this.state)
   //   };
-  //   fetch(`/api/auth/${action}`, req)
+  //   fetch(`/newInquiry`, req)
   //     .then(res => res.json())
   //     .then(result => {
   //       if (action === 'sign-up') {
@@ -62,9 +61,9 @@ export default class Inquiry extends React.Component {
   render() {
     const { handleChange, handleSubmit } = this;
     return (
-      <form className="container-fluid mt-3" onSubmit={handleSubmit}>
+      <form className="container mt-3 d-flex flex-column col-lg-10" onSubmit={handleSubmit}>
         <div className="row flex-column">
-          <h1 className="px-3 py-2">Referrals</h1>
+          <h1 className="px-3 py-2 my-2 my-lg-3">Referrals</h1>
         </div>
         <div className="row flex-column my-2">
           <div className="p-3 py-2 py-md-0">
