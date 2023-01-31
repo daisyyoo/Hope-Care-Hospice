@@ -13,7 +13,7 @@ CREATE TABLE "public"."patients" (
 	"phone" int,
 	"diagnosis" TEXT,
 	"location" TEXT NOT NULL,
-	CONSTRAINT "patients_pk" PRIMARY KEY ("Id")
+	CONSTRAINT "patients_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
 );
