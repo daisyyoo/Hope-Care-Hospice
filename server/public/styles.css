@@ -49,11 +49,12 @@ h1,
 .menu-link:active {
   border: solid 2px #10375c;
   border-radius: 5px;
-  color: #f3c623 !important;
+  color: #127681 !important;
+  background-color: #fff;
 }
 
 .menu-link:visited {
-  color: #63c6f7;
+  color: #127681 !important;
 }
 
 .call-button-all {
@@ -140,11 +141,13 @@ h1,
 
   .menu-link:hover,
   .menu-link:active {
-    border: solid 2px #10375c;
+    border: solid 2px #f3c623;
+    color: #63c6f7;
+    background-color: #10375c;
   }
 
   .menu-link:visited {
-    color: #63c6f7;
+    color: #63c6f7 !important;
   }
 
   .call-button-all {
