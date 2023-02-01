@@ -42,18 +42,20 @@ h1,
 .menu-link {
   color: #10375c;
   border: solid 2px #fff;
+  border-radius: 5px;
   font-size: 1rem;
+  transition: color 0.25s, border 0.25s ease-in-out;
 }
 
 .menu-link:hover,
 .menu-link:active {
   border: solid 2px #10375c;
   border-radius: 5px;
-  color: #f3c623 !important;
+  color: #127681 !important;
 }
 
 .menu-link:visited {
-  color: #63c6f7;
+  color: #127681 !important;
 }
 
 .call-button-all {
@@ -63,6 +65,9 @@ h1,
   border-radius: 5px;
   font-size: 1rem;
   margin: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .call-button-all:hover {
@@ -106,6 +111,19 @@ h1,
   height: 25vh;
 }
 
+.phone-logo-in-button {
+  color: #10375c;
+  font-size: 1.2rem;
+}
+
+.call-button-all:hover .phone-logo-in-button {
+  color: #f3c623;
+}
+
+.call-button-all:active .phone-logo-in-button {
+  color: #10375c;
+}
+
 @media only screen and (min-width: 568px) {
   .image-container {
     height: 70vh;
@@ -129,7 +147,7 @@ h1,
     font-size: 2rem;
   }
 
-  .fa-phone {
+  .phone-alone {
     display: none;
   }
 
@@ -140,11 +158,13 @@ h1,
 
   .menu-link:hover,
   .menu-link:active {
-    border: solid 2px #10375c;
+    border: solid 2px #f3c623;
+    color: #63c6f7;
+    background-color: #10375c;
   }
 
   .menu-link:visited {
-    color: #63c6f7;
+    color: #63c6f7 !important;
   }
 
   .call-button-all {
