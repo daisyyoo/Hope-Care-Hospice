@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import validator from 'email-validator';
 
 const styles = {
   textTop: {
@@ -10,6 +11,11 @@ const styles = {
   textMuted: {
     color: '#10375c',
     fontSize: '0.9rem',
+    lineHeight: '1.7rem'
+  },
+  requirementMessage: {
+    color: '#d61456',
+    fontSize: '1rem',
     lineHeight: '1.7rem'
   }
 };
@@ -38,6 +44,20 @@ export default class Inquiry extends React.Component {
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+  }
+
+  handleRequirements() {
+    const { patientFirstName, patientLastName, location, contactFirstName, contactLastName, email, contactPhoneNumber, relationship } = this.state;
+
+    if (patientFirstName.length === 0 || patientLastName.length === 0 || location.length === 0 || contactFirstName.length === 0 || contactLastName.length === 0 || relationship.length === 0) {
+      return 'Fields with an asterisk are required.';
+    } else if (contactPhoneNumber.length !== 10) {
+      return 'Phone number should be 10 digits, numbers only.';
+    } else if (!validator.validate(email)) {
+      return 'Please enter a valid email.';
+    } else {
+      return '';
+    }
   }
 
   handleSubmit(event) {
@@ -82,6 +102,7 @@ export default class Inquiry extends React.Component {
 
   render() {
     const { handleChange, handleSubmit } = this;
+    const message = this.handleRequirements();
     return (
       <form className="container mt-3 d-flex flex-column col-lg-10" onSubmit={handleSubmit}>
         <div className="row flex-column">
@@ -147,8 +168,16 @@ export default class Inquiry extends React.Component {
                 onChange={handleChange}
                 >
                 <option value=""/>
+                <option value="ALS">ALS</option>
                 <option value="Alzheimer's">Alzheimer&apos;s</option>
-                <option value="Dementia">Dementia</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Heart Disease">Heart Disease</option>
+                <option value="HIV and AIDS">HIV and AIDS</option>
+                <option value="Liver Disease">Liver Disease</option>
+                <option value="Lung Disease">Lung Disease</option>
+                <option value="Renal Disease">Renal Disease</option>
+                <option value="Sepsis">Sepsis</option>
+                <option value="Other/Unknown">Other/Unknown</option>
               </Form.Select>
             </Form.Group>
           </div>
@@ -163,7 +192,7 @@ export default class Inquiry extends React.Component {
               >
                 <option value=""/>
                 <option value="home">Home</option>
-                <option value="AL">Assisted Living</option>
+                <option value="Hospital/Facility">Hospital/Facility</option>
               </Form.Select>
             </Form.Group>
           </div>
@@ -221,14 +250,16 @@ export default class Inquiry extends React.Component {
                 onChange={handleChange}
               >
                 <option />
-                <option value="mother">Mother</option>
-                <option value="father">Father</option>
-                <option value="friend">Friend</option>
+                <option value="professional healthcare">A professional healthcare facility or officer</option>
+                <option value="relative/loved one/myself">A relative, a loved one, or myself</option>
               </Form.Select>
             </Form.Group>
           </div>
-          <div className="d-flex justify-content-end">
-            <Button type="submit" className="call-button-all m-2 mt-4 px-5"><b>SUBMIT</b></Button>
+          <div className="d-flex justify-content-between">
+            <div className="d-flex align-items-center text-center" >
+              <p style={styles.requirementMessage} className={this.state.submitted ? 'd-none' : 'px-3 show'}>{message}</p>
+            </div>
+            <Button type="submit" disabled={message.length !== 0} className="call-button-all m-2 mt-4 px-5"><b>SUBMIT</b></Button>
           </div>
           <div className="row flex-column my-2">
             <div className="p-3 py-2 py-md-0">
