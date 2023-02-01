@@ -8,9 +8,9 @@ create schema "public";
 
 CREATE TABLE "public"."patients" (
 	"inquiryId" serial NOT NULL,
-	"firstName" TEXT NOT NULL,
-	"lastName" TEXT NOT NULL,
-	"phone" int,
+	"patientFirstName" TEXT NOT NULL,
+	"patientLastName" TEXT NOT NULL,
+	"patientPhoneNumber" TEXT,
 	"diagnosis" TEXT,
 	"location" TEXT NOT NULL,
 	CONSTRAINT "patients_pk" PRIMARY KEY ("inquiryId")
@@ -22,10 +22,10 @@ CREATE TABLE "public"."patients" (
 
 CREATE TABLE "public"."patientContact" (
 	"inquiryId" int NOT NULL UNIQUE,
-	"firstName" TEXT NOT NULL,
-	"lastName" TEXT NOT NULL,
+	"contactFirstName" TEXT NOT NULL,
+	"contactLastName" TEXT NOT NULL,
 	"email" TEXT NOT NULL,
-	"phone" int NOT NULL,
+	"contactPhoneNumber" TEXT NOT NULL,
 	"relationship" TEXT NOT NULL
 ) WITH (
   OIDS=FALSE
