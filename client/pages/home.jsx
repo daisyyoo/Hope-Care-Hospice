@@ -2,7 +2,7 @@ import React from 'react';
 
 const styles = {
   image: {
-    backgroundImage: 'url("/images/holding-hands-pic.jpg")',
+    backgroundImage: 'url("/images/holding-hands-pic.webp")',
     backgroundSize: 'cover',
     backgroundPosition: '60%',
     width: '100%',

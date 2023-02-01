@@ -29,7 +29,7 @@ export default class AboutUs extends React.Component {
             </h6>
           </div>
           <div className="d-flex justify-content-center about-us-image-container">
-            <img style={styles.image} className="col-9 img-fluid rounded" src="/images/Chinese-Senior-Unique-Man-w-Caregiver.jpg" alt="Chinese-Senior-Unique-Man-w-Caregiver" />
+            <img style={styles.image} className="col-9 img-fluid rounded" src="/images/Chinese-Senior-Unique-Man-w-Caregiver.webp" alt="Chinese-Senior-Unique-Man-w-Caregiver" />
           </div>
           <div className="d-flex justify-content-center">
             <Button className="call-button-all m-2 my-4 px-5" href="tel:+1-714-724-8033"><b>Call us at 714.724.8033</b></Button>
