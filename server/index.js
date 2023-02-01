@@ -84,11 +84,12 @@ app.post('/newInquiry', (req, res, next) => {
 
       const msg = {
         to: email,
-        from: 'hopecarehospice2019@gmail.com',
+        from: 'Hope Care Hospice <hopecarehospice2019@gmail.com>',
         subject: 'Hospice Referral Submission',
         text: `Hospice Referral Submission for ${patientFirstName + ' ' + patientLastName}`,
         html: `
-            <br><h2>Thank you for your referral submission. Here is a copy of the information you submitted.</h2>
+            <br><h2>Thank you for your referral submission.
+            Here is a copy of the information you submitted.</h2>
             <br>
             <br><strong>Patient's Name: </strong> ${patientFirstName + ' ' + patientLastName}<br>
             <br><strong>Patient's Phone Number: </strong> ${patientPhoneNumber}<br>
@@ -99,12 +100,12 @@ app.post('/newInquiry', (req, res, next) => {
             <br><strong>Patient's Relationship: </strong> ${relationship}<br>
             <br>
             <br><h3>We'll be reaching out soon!</h3>
-            <br><h4>If any of the above information is incorrect, please reach out to us by replying to this email.</h4>`
+            <br><h4><em>If any of the above information is incorrect, please reach out to us by replying to this email.</em></h4>`
       };
       return sgMail.send(msg);
     })
     .then(() => {
-      res.send();
+      res.json();
     })
     .catch(err => next(err));
 });

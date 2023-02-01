@@ -54,9 +54,9 @@ export default class Inquiry extends React.Component {
         if (res.status === 500) {
           this.setState({ error: true });
         }
-        return res.json();
+        return res.text();
       })
-      .then(newPatient => {
+      .then(response => {
         this.setState({
           patientFirstName: '',
           patientLastName: '',
@@ -70,11 +70,14 @@ export default class Inquiry extends React.Component {
           relationship: '',
           submitted: true
         });
-        setTimeout(() => {
-          this.setState({ submitted: false });
-        });
+        // const message = setTimeout(() => this.setState({ submitted: false }), 3000);
+        // clearTimeout(message);
       })
       .catch(err => console.error(err));
+  }
+
+  componentWillUnmount() {
+    this.setState({ submitted: false });
   }
 
   render() {
@@ -169,7 +172,6 @@ export default class Inquiry extends React.Component {
               <Form.Label htmlFor="contactFirstName">Patient Contact First Name: *</Form.Label>
               <Form.Control
                 required
-                autoFocus
                 id="contactFirstName"
                 type="text"
                 name="contactFirstName"
