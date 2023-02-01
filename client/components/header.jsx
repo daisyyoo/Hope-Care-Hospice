@@ -26,15 +26,10 @@ export default class Header extends React.Component {
             <Navbar.Toggle aria-controls="offcanvasNavbar-expand"/>
           </div>
           <Navbar.Offcanvas id="offcanvasNavbar-expand" aria-labelledby="offcanvasNavbar-expand" placement="end">
-            <Offcanvas.Header className="px-3 m-3 align-self-end" closeButton>
-              {/* <Offcanvas.Title className="pt-2" id="offcanvasNavbar-expand">
-                Hope Care Hospice
-              </Offcanvas.Title> */}
-            </Offcanvas.Header>
+            <Offcanvas.Header className="px-3 m-3 align-self-end" closeButton />
             <Offcanvas.Body className="px-4 p-0">
               <Nav className="justify-content-end flex-grow-1 pe-3" onSelect={(_, event) => { window.location.href = event.target.href; }} >
                 <Nav.Link className="px-3 menu-link" href="#">HOME</Nav.Link>
-                {/* <Nav.Link className="px-3 menu-link" href="#hospiceBasics">HOSPICE BASICS</Nav.Link> */}
                 <Nav.Link className="px-3 menu-link" href="#newInquiry">REFERRALS</Nav.Link>
                 <Nav.Link className="px-3 menu-link" href="#aboutUs">ABOUT US</Nav.Link>
                 <Button className="call-button-all" href="tel:+1-714-724-8033">

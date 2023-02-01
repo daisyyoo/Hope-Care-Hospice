@@ -90,8 +90,6 @@ export default class Inquiry extends React.Component {
           relationship: '',
           submitted: true
         });
-        // const message = setTimeout(() => this.setState({ submitted: false }), 3000);
-        // clearTimeout(message);
       })
       .catch(err => console.error(err));
   }
