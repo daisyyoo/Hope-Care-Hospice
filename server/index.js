@@ -83,13 +83,13 @@ app.post('/newInquiry', (req, res, next) => {
       }
 
       const msg = {
-        to: email,
+        to: [email, 'hch090419@gmail.com'],
         from: 'Hope Care Hospice <hopecarehospice2019@gmail.com>',
         subject: 'Hospice Referral Submission',
         text: `Hospice Referral Submission for ${patientFirstName + ' ' + patientLastName}`,
         html: `
-            <br><h2>Thank you for your referral submission.
-            Here is a copy of the information you submitted.</h2>
+            <br><h2>Thank you for your referral submission.</h2>
+            <br><h3>Here is a copy of the information you submitted.</h3>
             <br>
             <br><strong>Patient's Name: </strong> ${patientFirstName + ' ' + patientLastName}<br>
             <br><strong>Patient's Phone Number: </strong> ${patientPhoneNumber}<br>
@@ -99,10 +99,10 @@ app.post('/newInquiry', (req, res, next) => {
             <br><strong>Patient's Phone Number: </strong> ${contactPhoneNumber}<br>
             <br><strong>Patient's Relationship: </strong> ${relationship}<br>
             <br>
-            <br><h3>We'll be reaching out soon!</h3>
-            <br><h4><em>If any of the above information is incorrect, please reach out to us by replying to this email.</em></h4>`
+            <br><h4>We'll be reaching out soon!</h4>
+            <br><h5><em>If any of the above information is incorrect, please reach out to us by replying to this email.</em></h5>`
       };
-      return sgMail.send(msg);
+      return sgMail.sendMultiple(msg);
     })
     .then(() => {
       res.json();

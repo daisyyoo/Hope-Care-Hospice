@@ -47,14 +47,14 @@ h1,
   transition: color 0.25s, border 0.25s ease-in-out;
 }
 
+.menu-link:visited {
+  color: #127681 !important;
+}
+
 .menu-link:hover,
 .menu-link:active {
   border: solid 2px #10375c;
   border-radius: 5px;
-  color: #127681 !important;
-}
-
-.menu-link:visited {
   color: #127681 !important;
 }
 
