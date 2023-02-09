@@ -96,8 +96,9 @@ app.post('/newInquiry', (req, res, next) => {
             <br><strong>Patient's Diagnosis: </strong> ${diagnosis}<br>
             <br><strong>Patient's Current Location: </strong> ${location}<br>
             <br><strong>Contact's Name: </strong> ${contactFirstName + ' ' + contactLastName}<br>
-            <br><strong>Patient's Phone Number: </strong> ${contactPhoneNumber}<br>
-            <br><strong>Patient's Relationship: </strong> ${relationship}<br>
+            <br><strong>Contact's Phone Number: </strong> ${contactPhoneNumber}<br>
+            <br><strong>Contact's Email: </strong> ${email}
+            <br><strong>Contact's Relationship: </strong> ${relationship}<br>
             <br>
             <br><h4>We'll be reaching out soon!</h4>
             <br><h5><em>If any of the above information is incorrect, please reach out to us by replying to this email.</em></h5>`
