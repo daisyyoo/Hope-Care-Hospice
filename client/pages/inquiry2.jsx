@@ -1,17 +1,47 @@
 // import React, { useState } from 'react';
+// import { useForm } from 'react-hook-form';
 // import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
 
-// function Inquiry2() {
+// const styles = {
+//   textTop: {
+//     color: '#10375c',
+//     lineHeight: '1.7rem'
+//   },
+//   textMuted: {
+//     color: '#10375c',
+//     fontSize: '0.9rem',
+//     lineHeight: '1.7rem'
+//   },
+//   requirementMessage: {
+//     color: '#d61456',
+//     fontSize: '1rem',
+//     lineHeight: '1.7rem'
+//   }
+// };
+
+// export default function Inquiry2() {
+//   const {
+//     register,
+//     handleSubmit,
+//     formState: {errors}
+//   } = useForm();
+
+//   console.log(errors);
+
 //   const [inputValue, setInputValue] = useState('');
+//   const [submitted, setSubmitted] = useState(false);
 
 //   const onChangeHandler = event => {
 //     setInputValue(event.target.value);
 //   };
 
 //   return (
-//     <form className="container mt-3 d-flex flex-column col-lg-10"
-//     // onSubmit={handleSubmit}
+//     <form
+//       className="container mt-3 d-flex flex-column col-lg-10"
+//       onSubmit={handleSubmit(data) => {
+//         console.log(data);
+//       }}
 //     >
 //       <div className="row">
 //         <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
@@ -34,7 +64,16 @@
 //               type="text"
 //               name="patientLastName"
 //               value={inputValue}
-//               onChange={onChangeHandler} />
+//               onChange={onChangeHandler}
+//               {...register("patientLastName", {
+//                 required: "This is required.",
+//                 minLength: {
+//                   value: 1,
+//                   message: "Min length is 1"
+//                 }
+//               })}
+//               placeholder="Patient Last Name"/>
+//               <p>{errors.patientLastName?.message}</p>
 //           </Form.Group>
 //         </div>
 //         <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
@@ -52,7 +91,7 @@
 //             <Form.Select
 //               id="diagnosis"
 //               name="diagnosis"
-//               value={this.state.diagnosis}
+//               value={inputValue}
 //               onChange={onChangeHandler}
 //               //maybe it's an onSelect for this one
 //             >
@@ -76,8 +115,8 @@
 //             <Form.Select
 //               id="location"
 //               name="location"
-//               value={this.state.location}
-//               onChange={handleChange}
+//               value={inputValue}
+//               onChange={onChangeHandler}
 //               //this one might also be onSelect
 //             >
 //               <option value="" />
@@ -136,8 +175,8 @@
 //             <Form.Select
 //               id="relationship"
 //               name="relationship"
-//               value={this.state.relationship}
-//               onChange={handleChange}
+//               value={inputValue}
+//               onChange={onChangeHandler}
 //               //this one also maybe onSelect
 //             >
 //               <option />
@@ -147,14 +186,18 @@
 //           </Form.Group>
 //         </div>
 //         <div className="d-flex justify-content-between">
-//           <div className="d-flex align-items-center text-center" >
-//             <p style={styles.requirementMessage} className={this.state.submitted ? 'd-none' : 'px-3 show'}>{message}</p>
-//           </div>
-//           <Button type="submit" disabled={message.length !== 0} className="call-button-all m-2 mt-4 px-5"><b>SUBMIT</b></Button>
+//           {/* <div className="d-flex align-items-center text-center" >
+//             <p style={styles.requirementMessage} className={submitted ? 'd-none' : 'px-3 show'}>{message}</p>
+//           </div> */}
+//           <Button
+//             type="submit"
+//             disabled={message.length !== 0}
+//             className="call-button-all m-2 mt-4 px-5">
+//             <b>SUBMIT</b></Button>
 //         </div>
 //         <div className="row flex-column my-2">
 //           <div className="p-3 py-2 py-md-0">
-//             <h6 style={styles.textMuted} className={this.state.submitted ? 'text-center show' : 'd-none'}>
+//             <h6 style={styles.textMuted} className={submitted ? 'text-center show' : 'd-none'}>
 //               Thank you for your submission! We will contact you soon.
 //             </h6>
 //           </div>
