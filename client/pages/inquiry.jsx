@@ -143,157 +143,170 @@ export default function Inquiry() {
           </Form.Group>
         </div>
       </div>
-      <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
-        <Form.Group className="col-md-5 mb-3 m-md-0" >
-          <Form.Label htmlFor="patientPhoneNumber">Patient&apos;s Phone Number:</Form.Label>
-          <Form.Control
-              type="text"
-              name="patientPhoneNumber"
-              {...register('patientPhoneNumber', {
-                minLength: {
-                  value: 10,
-                  message: 'Phone number should be 10 numbers only.'
-                }
-              })}
-              placeholder="Patient Phone Number" />
-          {errors.patientPhoneNumber?.type === 'minLength' &&
-          <p className="errorMsg px-3" style={styles.errorMsg}>{errors.patientPhoneNumber.message}</p>
-            }
-        </Form.Group>
-        <Form.Group className="col-md-5 mb-3 m-md-0" >
-          <Form.Label htmlFor="diagnosis">Patient&apos;s Diagnosis: *</Form.Label>
-          <Controller
-              name="diagnosis"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => (
-                <Select {...field} isMulti options={diagnosis} />
-              )}
-              defaultValue=""
-            />
-          {errors.diagnosis && (
-          <p className="errorMsg px-3" style={styles.errorMsg}>This is a required field.</p>
-          )}
-        </Form.Group>
-      </div>
-      <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
-        <Form.Group className="col-md-5 mb-3 m-md-0" >
-          <Form.Label htmlFor="location">Patient&apos;s Current Location: *</Form.Label>
-          <Controller
-              name="location"
-              control = {control}
-              rules={{ required: true }}
-              render={({ field }) => (
-                <Select {...field} isMulti options={location} />
-              )}
-              defaultValue=""
+      <div className="row">
+        <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
+          <Form.Group className="col-md-5 mb-3 m-md-0" >
+            <Form.Label htmlFor="patientPhoneNumber">Patient&apos;s Phone Number:</Form.Label>
+            <Form.Control
+                type="text"
+                name="patientPhoneNumber"
+                {...register('patientPhoneNumber', {
+                  minLength: {
+                    value: 10,
+                    message: 'Phone number should be 10 numbers only.'
+                  }
+                })}
+                placeholder="Patient Phone Number" />
+            {errors.patientPhoneNumber?.type === 'minLength' &&
+            <p className="errorMsg px-3" style={styles.errorMsg}>{errors.patientPhoneNumber.message}</p>
+              }
+          </Form.Group>
+          <Form.Group className="col-md-5 mb-3 m-md-0" >
+            <Form.Label htmlFor="diagnosis">Patient&apos;s Diagnosis: *</Form.Label>
+            <Controller
+                name="diagnosis"
+                control={control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select {...field} isMulti options={diagnosis} />
+                )}
+                defaultValue=""
               />
-          {errors.location && (
-          <p className="errorMsg px-3" style={styles.errorMsg}>This is a required field.</p>
-          )}
-        </Form.Group>
+            {errors.diagnosis && (
+            <p className="errorMsg px-3" style={styles.errorMsg}>This is a required field.</p>
+            )}
+          </Form.Group>
+        </div>
       </div>
-      <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
-        <Form.Group className="col-md-5 mb-3 m-md-0" >
-          <Form.Label htmlFor="contactFirstName">Patient Contact First Name: *</Form.Label>
-          <Form.Control
-              type="text"
-              name="contactFirstName"
-              {...register('contactFirstName', {
-                required: true,
-                minLength: {
-                  value: 2,
-                  message: "Contact's first name should be at least 2 characters."
-                }
-              })}
-              placeholder="Patient Last Name" />
-          {errors.contactFirstName?.type === 'required' && (
-          <p className="errorMsg px-3" style={styles.errorMsg}>Contact&apos;s last name is required.</p>
-          )}
-          {errors.contactFirstName?.type === 'minLength' && (
-          <p className="errorMsg px-3" style={styles.errorMsg}>{errors.contactFirstName.message}</p>
-          )}
-        </Form.Group>
-        <Form.Group className="col-md-5 mb-3 m-md-0" >
-          <Form.Label htmlFor="contactLastName">Patient Contact Last Name: *</Form.Label>
-          <Form.Control
-              type="text"
-              name="contactLastName"
-              {...register('contactLastName', {
-                required: true,
-                minLength: {
-                  value: 2,
-                  message: "Contact's last name should be at least 2 characters."
-                }
-              })}
-              placeholder="Patient Last Name" />
-          {errors.contactLastName?.type === 'required' && (
-          <p className="errorMsg px-3" style={styles.errorMsg}>Contact&apos;s last name is required.</p>
-          )}
-          {errors.contactLastName?.type === 'minLength' && (
-          <p className="errorMsg px-3" style={styles.errorMsg}>{errors.contactLastName.message}</p>
-          )}
-        </Form.Group>
+      <div className="row">
+        <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
+          <Form.Group className="col-md-5 mb-3 m-md-0" >
+            <Form.Label htmlFor="location">Patient&apos;s Current Location: *</Form.Label>
+            <Controller
+                name="location"
+                control = {control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select {...field} options={location} />
+                )}
+                defaultValue=""
+                />
+            {errors.location && (
+            <p className="errorMsg px-3" style={styles.errorMsg}>This is a required field.</p>
+            )}
+          </Form.Group>
+        </div>
       </div>
-      <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
-        <Form.Group className="col-md-5 mb-3 m-md-0" >
-          <Form.Label htmlFor="email">Patient Contact Email: *</Form.Label>
-          <Form.Control
-              type="text"
-              name="email"
-              {...register('email', {
-                minLength: {
+      <div className="row">
+        <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
+          <Form.Group className="col-md-5 mb-3 m-md-0" >
+            <Form.Label htmlFor="contactFirstName">Patient Contact First Name: *</Form.Label>
+            <Form.Control
+                type="text"
+                name="contactFirstName"
+                {...register('contactFirstName', {
                   required: true,
-                  pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/
-                }
-              })}
-              placeholder="Contact email address" />
-          {errors.email?.type === 'required' && (
-          <p className="errorMsg px-3" style={styles.errorMsg}>Email is required.</p>
-          )}
-          {errors.email?.type === 'pattern' && (
-          <p className="errorMsg px-3" style={styles.errorMsg}>Email is not valid.</p>
-          )}
-        </Form.Group>
-        <Form.Group className="col-md-5 mb-3 m-md-0" >
-          <Form.Label htmlFor="contactPhoneNumber">Patient Contact Phone Number: *</Form.Label>
-          <Form.Control
-              type="text"
-              name="contactPhoneNumber"
-              {...register('contactPhoneNumber', {
-                minLength: {
-                  value: 10,
-                  message: 'Phone number should be 10 numbers only.'
-                }
-              })}
-              placeholder="Patient Phone Number" />
-          {errors.contactPhoneNumber?.type === 'minLength' &&
-          <p className="errorMsg px-3" style={styles.errorMsg}>{errors.contactPhoneNumber.message}</p>
-            }
-        </Form.Group>
+                  minLength: {
+                    value: 2,
+                    message: "Contact's first name should be at least 2 characters."
+                  }
+                })}
+                placeholder="Patient Last Name" />
+            {errors.contactFirstName?.type === 'required' && (
+            <p className="errorMsg px-3" style={styles.errorMsg}>Contact&apos;s last name is required.</p>
+            )}
+            {errors.contactFirstName?.type === 'minLength' && (
+            <p className="errorMsg px-3" style={styles.errorMsg}>{errors.contactFirstName.message}</p>
+            )}
+          </Form.Group>
+          <Form.Group className="col-md-5 mb-3 m-md-0" >
+            <Form.Label htmlFor="contactLastName">Patient Contact Last Name: *</Form.Label>
+            <Form.Control
+                type="text"
+                name="contactLastName"
+                {...register('contactLastName', {
+                  required: true,
+                  minLength: {
+                    value: 2,
+                    message: "Contact's last name should be at least 2 characters."
+                  }
+                })}
+                placeholder="Patient Last Name" />
+            {errors.contactLastName?.type === 'required' && (
+            <p className="errorMsg px-3" style={styles.errorMsg}>Contact&apos;s last name is required.</p>
+            )}
+            {errors.contactLastName?.type === 'minLength' && (
+            <p className="errorMsg px-3" style={styles.errorMsg}>{errors.contactLastName.message}</p>
+            )}
+          </Form.Group>
+        </div>
       </div>
-      <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
-        <Form.Group className="col-md-5 mb-3 m-md-0" >
-          <Form.Label htmlFor="relationship">This Referral is made on behalf of: *</Form.Label>
-          <Controller
-              name="relationship"
-              control = {control}
-              rules={{ required: true }}
-              render={({ field }) => (
-                <Select {...field} isMulti options={relationship} />
-              )}
-              defaultValue=""
-              />
-          {errors.relationship && (
-          <p className="errorMsg px-3" style={styles.errorMsg}>This is a required field.</p>
-          )}
-        </Form.Group>
+      <div className="row">
+        <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
+          <Form.Group className="col-md-5 mb-3 m-md-0" >
+            <Form.Label htmlFor="email">Patient Contact Email: *</Form.Label>
+            <Form.Control
+                type="text"
+                name="email"
+                {...register('email', {
+                  minLength: {
+                    required: true,
+                    pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/
+                  }
+                })}
+                placeholder="Contact email address" />
+            {errors.email?.type === 'required' && (
+            <p className="errorMsg px-3" style={styles.errorMsg}>Email is required.</p>
+            )}
+            {errors.email?.type === 'pattern' && (
+            <p className="errorMsg px-3" style={styles.errorMsg}>Email is not valid.</p>
+            )}
+          </Form.Group>
+          <Form.Group className="col-md-5 mb-3 m-md-0" >
+            <Form.Label htmlFor="contactPhoneNumber">Patient Contact Phone Number: *</Form.Label>
+            <Form.Control
+                type="text"
+                name="contactPhoneNumber"
+                {...register('contactPhoneNumber', {
+                  minLength: {
+                    value: 10,
+                    message: 'Phone number should be 10 numbers only.'
+                  }
+                })}
+                placeholder="Patient Phone Number" />
+            {errors.contactPhoneNumber?.type === 'minLength' &&
+            <p className="errorMsg px-3" style={styles.errorMsg}>{errors.contactPhoneNumber.message}</p>
+              }
+          </Form.Group>
+        </div>
       </div>
-      <Button
+      <div className="row">
+        <div className="d-flex px-3 py-md-2 flex-column flex-md-row col-12 justify-content-between">
+          <Form.Group className="col-md-5 mb-3 m-md-0" >
+            <Form.Label htmlFor="relationship">This Referral is made on behalf of: *</Form.Label>
+            <Controller
+                name="relationship"
+                control = {control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select {...field} options={relationship} />
+                )}
+                defaultValue=""
+                />
+            {errors.relationship && (
+            <p className="errorMsg px-3" style={styles.errorMsg}>This is a required field.</p>
+            )}
+          </Form.Group>
+        </div>
+      </div>
+      <div className="row">
+        <div className="d-flex col-12 justify-content-center mb-3 justify-content-lg-end">
+          <Button
             type="submit"
-            className="call-button-all m-2 mt-4 px-5">
-        <b>SUBMIT</b></Button>
+            className="call-button-all m-2 px-5">
+            <b>SUBMIT</b></Button>
+        </div>
+      </div>
     </form>
   );
 }
-// }
