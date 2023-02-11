@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -45,33 +45,36 @@ const relationship = [
 ];
 
 export default function Inquiry() {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     patientFirstName: '',
-  //     patientLastName: '',
-  //     patientPhoneNumber: '',
-  //     diagnosis: '',
-  //     location: '',
-  //     contactFirstName: '',
-  //     contactLastName: '',
-  //     email: '',
-  //     contactPhoneNumber: '',
-  //     relationship: '',
-  //     submitted: false,
-  //     error: false
-  //   };
+  const [submitted, setSubmitted] = useState(false);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState();
 
   const {
     register,
     handleSubmit,
+    reset,
     control,
     formState: { errors }
   } = useForm();
 
   const onSubmit = data => {
-    // console.log(data);
-    // fetch things here
+    // event.preventDefault();
+    const req = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    };
+    fetch('/newInquiry', req)
+      .then(res => res.text())
+      .then(response => {
+        // setLoading(false);
+        reset(response);
+        // I need to figure out how to reset the form inputs
+        // maybe I need to write in default values for all forms, especially the controlled components
+        // then I can reset back to default values
+        setSubmitted(true);
+      });
+    // .catch(setError);
   };
 
   return (
@@ -246,20 +249,21 @@ export default function Inquiry() {
           <Form.Group className="col-md-5 mb-3 m-md-0" >
             <Form.Label htmlFor="email">Patient Contact Email: *</Form.Label>
             <Form.Control
-                type="text"
+                type="email"
                 name="email"
                 {...register('email', {
-                  minLength: {
-                    required: true,
-                    pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/
+                  required: true,
+                  pattern: {
+                    value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                    message: 'Please enter a valid email'
                   }
                 })}
                 placeholder="Contact email address" />
             {errors.email?.type === 'required' && (
-            <p className="errorMsg px-3" style={styles.errorMsg}>Email is required.</p>
+            <p className="errorMsg px-3" style={styles.errorMsg}>Email address is required.</p>
             )}
             {errors.email?.type === 'pattern' && (
-            <p className="errorMsg px-3" style={styles.errorMsg}>Email is not valid.</p>
+            <p className="errorMsg px-3" style={styles.errorMsg}>{errors.email.message}</p>
             )}
           </Form.Group>
           <Form.Group className="col-md-5 mb-3 m-md-0" >
@@ -300,11 +304,18 @@ export default function Inquiry() {
         </div>
       </div>
       <div className="row">
-        <div className="d-flex col-12 justify-content-center mb-3 justify-content-lg-end">
+        <div className="d-flex col-12 justify-content-center justify-content-md-end">
           <Button
             type="submit"
             className="call-button-all m-2 px-5">
             <b>SUBMIT</b></Button>
+        </div>
+      </div>
+      <div className="row flex-column my-2">
+        <div className="p-3 py-2 py-md-0">
+          <h6 style={styles.textMuted}>
+            {submitted ? 'Thank you for your submission! We will contact you soon.' : ''}
+          </h6>
         </div>
       </div>
     </form>
