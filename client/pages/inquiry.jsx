@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -56,6 +56,20 @@ export default function Inquiry() {
     control,
     formState: { errors }
   } = useForm();
+  // useForm<FormValues>({
+  //   defaultValues: {
+  //     patientFirstName: "",
+  //     patientLastName: "",
+  //     patientPhoneNumber: "",
+  //     diagnosis: "",
+  //     location: "",
+  //     contactFirstName: "",
+  //     contactLastName: "",
+  //     email: "",
+  //     contactPhoneNumber: "",
+  //     relationship: ""
+  //   }
+  // });
 
   const onSubmit = data => {
     // event.preventDefault();
@@ -68,7 +82,6 @@ export default function Inquiry() {
       .then(res => res.text())
       .then(response => {
         // setLoading(false);
-        reset(response);
         // I need to figure out how to reset the form inputs
         // maybe I need to write in default values for all forms, especially the controlled components
         // then I can reset back to default values
@@ -76,6 +89,10 @@ export default function Inquiry() {
       });
     // .catch(setError);
   };
+
+  useEffect(() => {
+    reset();
+  });
 
   return (
     <form
