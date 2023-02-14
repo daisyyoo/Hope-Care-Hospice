@@ -78,12 +78,17 @@ app.post('/newInquiry', (req, res, next) => {
       const newPatientInfo = result.rows;
       const { inquiryId, patientFirstName, patientLastName, patientPhoneNumber, diagnosis, location, contactFirstName, contactLastName, email, contactPhoneNumber, relationship } = newPatientInfo[0];
 
+      const diagnosis1 = JSON.parse(diagnosis).value;
+      const location1 = JSON.parse(location).value;
+      const relationship1 = JSON.parse(relationship).value;
+      const hospiceEmail = 'hch090419@gmail.com';
+
       if (!result.rows) {
         throw new ClientError(404, `cannot find patient with inquiryId ${inquiryId}`);
       }
 
       const msg = {
-        to: [email, 'hch090419@gmail.com'],
+        to: [email, hospiceEmail],
         from: 'Hope Care Hospice <hopecarehospice2019@gmail.com>',
         subject: 'Hospice Referral Submission',
         text: `Hospice Referral Submission for ${patientFirstName + ' ' + patientLastName}`,
@@ -93,12 +98,12 @@ app.post('/newInquiry', (req, res, next) => {
             <br>
             <br><strong>Patient's Name: </strong> ${patientFirstName + ' ' + patientLastName}<br>
             <br><strong>Patient's Phone Number: </strong> ${patientPhoneNumber}<br>
-            <br><strong>Patient's Diagnosis: </strong> ${diagnosis}<br>
-            <br><strong>Patient's Current Location: </strong> ${location}<br>
+            <br><strong>Patient's Diagnosis: </strong> ${diagnosis1}<br>
+            <br><strong>Patient's Current Location: </strong> ${location1}<br>
             <br><strong>Contact's Name: </strong> ${contactFirstName + ' ' + contactLastName}<br>
             <br><strong>Contact's Phone Number: </strong> ${contactPhoneNumber}<br>
             <br><strong>Contact's Email: </strong> ${email}<br>
-            <br><strong>Contact's Relationship: </strong> ${relationship}<br>
+            <br><strong>Contact's Relationship: </strong> ${relationship1}<br>
             <br>
             <br><h4>We'll be reaching out soon!</h4>
             <br><h5><em>If any of the above information is incorrect, please reach out to us by replying to this email.</em></h5>`

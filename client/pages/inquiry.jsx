@@ -45,8 +45,8 @@ const relationship = [
 ];
 
 export default function Inquiry() {
-  const [submitted, setSubmitted] = useState(false);
-  // const [loading, setLoading] = useState(true);
+  const [submittedData, setSubmittedData] = useState(false);
+  // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState();
 
   const {
@@ -54,22 +54,22 @@ export default function Inquiry() {
     handleSubmit,
     reset,
     control,
+    formState,
     formState: { errors }
-  } = useForm();
-  // useForm<FormValues>({
-  //   defaultValues: {
-  //     patientFirstName: "",
-  //     patientLastName: "",
-  //     patientPhoneNumber: "",
-  //     diagnosis: "",
-  //     location: "",
-  //     contactFirstName: "",
-  //     contactLastName: "",
-  //     email: "",
-  //     contactPhoneNumber: "",
-  //     relationship: ""
-  //   }
-  // });
+  } = useForm({
+    defaultValues: {
+      patientFirstName: '',
+      patientLastName: '',
+      patientPhoneNumber: '',
+      diagnosis: '',
+      location: '',
+      contactFirstName: '',
+      contactLastName: '',
+      email: '',
+      contactPhoneNumber: '',
+      relationship: ''
+    }
+  });
 
   const onSubmit = data => {
     // event.preventDefault();
@@ -81,18 +81,17 @@ export default function Inquiry() {
     fetch('/newInquiry', req)
       .then(res => res.text())
       .then(response => {
-        // setLoading(false);
-        // I need to figure out how to reset the form inputs
-        // maybe I need to write in default values for all forms, especially the controlled components
-        // then I can reset back to default values
-        setSubmitted(true);
+        // setLoading(true);
       });
     // .catch(setError);
   };
 
   useEffect(() => {
-    reset();
-  });
+    if (formState.isSubmitSuccessful) {
+      reset();
+      setSubmittedData(true);
+    }
+  }, [formState, submittedData, reset]);
 
   return (
     <form
@@ -188,7 +187,7 @@ export default function Inquiry() {
                 control={control}
                 rules={{ required: true }}
                 render={({ field }) => (
-                  <Select {...field} isMulti options={diagnosis} />
+                  <Select {...field} options={diagnosis} />
                 )}
                 defaultValue=""
               />
@@ -331,7 +330,7 @@ export default function Inquiry() {
       <div className="row flex-column my-2">
         <div className="p-3 py-2 py-md-0">
           <h6 style={styles.textMuted}>
-            {submitted ? 'Thank you for your submission! We will contact you soon.' : ''}
+            {submittedData ? 'Thank you for your submission! We will contact you soon.' : ''}
           </h6>
         </div>
       </div>
